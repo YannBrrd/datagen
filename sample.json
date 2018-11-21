@@ -1,0 +1,66 @@
+{
+    "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 1
+    },
+    "mappings": {
+        "customers": {
+            "properties": {
+                "firstName": {
+                    "type": "text"
+                },
+                "lastname": {
+                    "type": "text"
+                },
+                "email": {
+                    "type": "text"
+                },
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "street": {
+                            "type": "text"
+                        },
+                        "city": {
+                            "type": "text"
+                        },
+                        "zipCode": {
+                            "type": "text"
+                        },
+                        "coordinates": {
+                            "type": "geo_point"
+                        }
+                    }
+                },
+                "account": {
+                    "type": "nested",
+                    "properties": {
+                        "accountName": {
+                            "type": "text"
+                        },
+                        "accountIban": {
+                            "type": "text"
+                        },
+                        "accountBic": {
+                            "type": "text"
+                        },
+                        "accountBalance": {
+                            "type": "float"
+                        },
+                        "transaction": {
+                            "type": "nested",
+                            "properties": {
+                                "transactionType": {
+                                    "type": "text"
+                                },
+                                "transactionAmount": {
+                                    "type": "float"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
