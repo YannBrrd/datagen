@@ -57,10 +57,11 @@ function generatePerson() {
 }
 
 fs.unlink("./res/data.json", function(err){
-    console.log(err);
 });
 
-for (i = 0 ; i < 500000; i++){
+for (i = 0 ; i < 100; i++){
     var p = generatePerson();
     fs.appendFileSync("./res/data.json", JSON.stringify(p) + "\r\n");
 }
+
+console.log("Data generated in ./res/data.json")
