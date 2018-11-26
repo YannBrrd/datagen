@@ -1,6 +1,11 @@
 FROM node:latest
 
-WORKDIR /usr/src/app
+# Create a working directory 
+RUN mkdir -p /datagen
+
+ 
+# Switch to working directory
+WORKDIR /datagen
 
 COPY package*.json ./
 
@@ -8,4 +13,6 @@ RUN npm install
 
 COPY . .
 
-CMD [ "npm", "start" ]
+CMD node datagen.js
+
+

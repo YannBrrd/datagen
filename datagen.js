@@ -62,5 +62,5 @@ fs.unlink("./data.json", function(err){
 for (i = 0 ; i < 500000; i++){
     var p = generatePerson();
     //console.log(util.inspect(JSON.stringify(p), {showHidden: false, depth:null}));
-    fs.appendFileSync("./data.json", JSON.stringify(p) + "\r\n");
+    fs.appendFileSync("./res/data.json", JSON.stringify(p) + "\r\n");
 }
