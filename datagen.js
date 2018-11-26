@@ -56,11 +56,11 @@ function generatePerson() {
     return person;
 }
 
-fs.unlink("./data.json", function(err){
+fs.unlink("./res/data.json", function(err){
+    console.log(err);
 });
 
 for (i = 0 ; i < 500000; i++){
     var p = generatePerson();
-    //console.log(util.inspect(JSON.stringify(p), {showHidden: false, depth:null}));
     fs.appendFileSync("./res/data.json", JSON.stringify(p) + "\r\n");
 }

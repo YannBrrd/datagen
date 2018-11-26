@@ -1,7 +1,14 @@
 {
     "settings": {
         "number_of_shards": 1,
-        "number_of_replicas": 1
+        "number_of_replicas": 1,
+        "analyzer":{
+            "my_text":{
+                "type":"standard",
+                "max_token_length":30,
+                "stopword":"__french__"
+            }
+        }
     },
     "mappings": {
         "customers": {
@@ -13,7 +20,8 @@
                     "type": "text"
                 },
                 "email": {
-                    "type": "text"
+                    "type": "text",
+                    "analyzer": "email"
                 },
                 "address": {
                     "type": "object",
