@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node datagen.js"
+    "start": "node datagen.js"
   },
   "repository": {
     "type": "git",
